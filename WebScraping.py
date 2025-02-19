@@ -2,6 +2,9 @@
 from bs4 import BeautifulSoup
 import requests
 
+#Project was done on February 5, 2025
+#Data may have changed since
+
 #connect to website
 url = 'https://en.wikipedia.org/wiki/World_Tourism_rankings'
 page = requests.get(url)
