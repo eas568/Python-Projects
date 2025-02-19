@@ -60,7 +60,7 @@ column5_data = table5.find_all('tr')[1:11]
 column6_data = table6.find_all('tr')[1:11]
 
 
-#using for loops to fill in the data that is 
+#for loops extracts data from each row in each table, cleans it and appends it to 'df-df6' until there are no more rows to extract
 for row in column1_data:
     row_data = row.find_all('td')
     individual_row_data = [data.text.strip() for data in row_data]
@@ -96,3 +96,11 @@ for row in column6_data:
     individual_row_data6 = [data.text.strip() for data in row_data6]  
     length6 = len(df6)
     df6.loc[length6] = individual_row_data6
+
+#creates csv files out of df-df6 tables created 
+df.to_csv(r'C:\Users\474604\Most_visited_places_in_the_world.csv',index = False)
+df2.to_csv(r'C:\Users\474604\Most_visited_places_in_africa.csv',index = False)
+df3.to_csv(r'C:\Users\474604\Most_visited_places_in_americas.csv',index = False)
+df4.to_csv(r'C:\Users\474604\Most_visited_places_in_asia_and_pacific.csv',index = False)
+df5.to_csv(r'C:\Users\474604\Most_visited_places_in_europe.csv',index = False)
+df6.to_csv(r'C:\Users\474604\Most_visited_places_in_west_asia.csv',index = False)
